@@ -2,8 +2,9 @@
 
 set -e
 
-gh_repo="papirus-icon-theme"
-gh_desc="Papirus icon theme"
+gh_user="meowmeowahr"
+gh_repo="papirus-icon-theme-rpi"
+gh_desc="Papirus icon theme for Pi OS Bookworm"
 
 cat <<- EOF
 
@@ -19,7 +20,7 @@ cat <<- EOF
 
 
   $gh_desc
-  https://github.com/PapirusDevelopmentTeam/$gh_repo
+  https://github.com/$gh_user/$gh_repo
 
 
 EOF
@@ -50,7 +51,7 @@ _sudo() {
 _download() {
     _msg "Getting the latest version from GitHub ..."
     wget -O "$temp_file" \
-        "https://github.com/PapirusDevelopmentTeam/$gh_repo/archive/$TAG.tar.gz"
+        "https://github.com/$gh_user/$gh_repo/archive/$TAG.tar.gz"
     _msg "Unpacking archive ..."
     tar -xzf "$temp_file" -C "$temp_dir"
 }
