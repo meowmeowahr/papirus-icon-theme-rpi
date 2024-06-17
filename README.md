@@ -27,11 +27,7 @@ Papirus icon theme is available in five variants:
 ## Contents
 
  - [Installation](#installation)
-    - [Ubuntu and derivatives](#ubuntu-and-derivatives)
-    - [Debian and derivatives](#debian-and-derivatives)
     - [Papirus Installer](#papirus-installer)
-    - [Snap](#snap)
-    - [Third-party packages](#third-party-packages)
  - [Hardcoded icons](#hardcoded-icons)
     - [Hardcoded application icons](#hardcoded-application-icons)
     - [Hardcoded tray icons](#hardcoded-tray-icons)
@@ -47,33 +43,6 @@ Papirus icon theme is available in five variants:
  - [License](#license)
 
 ## Installation
-
-### Ubuntu and derivatives
-
-You can install Papirus from our official [PPA](https://launchpad.net/~papirus/+archive/ubuntu/papirus):
-
-```sh
-sudo add-apt-repository ppa:papirus/papirus
-sudo apt-get update
-sudo apt-get install papirus-icon-theme  # Papirus, Papirus-Dark, and Papirus-Light
-sudo apt-get install epapirus-icon-theme # ePapirus, and ePapirus-Dark for elementaryOS only
-```
-
-or download .deb packages from [here](https://launchpad.net/~papirus/+archive/ubuntu/papirus/+packages?field.name_filter=papirus-icon-theme).
-
-> [!NOTE]
-> Now the daily builds of the papirus-icon-themes package are placed in [`ppa:papirus/papirus-dev`](https://launchpad.net/~papirus/+archive/ubuntu/papirus-dev).
-
-### Debian and derivatives
-
-Debian users also can install Papirus from our [PPA](https://launchpad.net/~papirus/+archive/ubuntu/papirus), but the commands will differ:
-
-```sh
-sudo sh -c "echo 'deb http://ppa.launchpad.net/papirus/papirus/ubuntu jammy main' > /etc/apt/sources.list.d/papirus-ppa.list"
-sudo wget -qO /etc/apt/trusted.gpg.d/papirus-ppa.asc 'https://keyserver.ubuntu.com/pks/lookup?op=get&search=0x9461999446FAF0DF770BFC9AE58A9D36647CAE7F'
-sudo apt-get update
-sudo apt-get install papirus-icon-theme
-```
 
 ### Papirus Installer
 
@@ -91,25 +60,7 @@ You may use environment variables to control WHERE, WHAT, and FROM you install:
 #### ROOT directory (recommended)
 
 ```
-wget -qO- https://git.io/papirus-icon-theme-install | sh
-```
-
-#### HOME directory for GTK
-
-```
-wget -qO- https://git.io/papirus-icon-theme-install | env DESTDIR="$HOME/.icons" sh
-```
-
-#### HOME directory for KDE
-
-```
-wget -qO- https://git.io/papirus-icon-theme-install | env DESTDIR="$HOME/.local/share/icons" sh
-```
-
-#### \*BSD systems
-
-```
-wget -qO- https://git.io/papirus-icon-theme-install | env DESTDIR="/usr/local/share/icons" sh
+wget -qO- https://raw.githubusercontent.com/meowmeowahr/papirus-icon-theme-rpi/master/install.sh | sh
 ```
 
 #### Uninstall
@@ -119,40 +70,6 @@ Use this interactive script to completely remove Papirus icon theme on your syst
 ```
 wget -qO- https://git.io/papirus-icon-theme-uninstall | sh
 ```
-
-### Snap
-
-<a href="https://snapcraft.io/icon-theme-papirus">
-  <img alt="Get it from the Snap Store" src="https://snapcraft.io/static/images/badges/en/snap-store-black.svg" />
-</a>
-
-### Third-party packages
-
-Packages listed in this section are third-party packages. If you have a problem or a question, please contact the package maintainer.
-
-Please note that some packages in the list may be outdated, open [Repology](https://repology.org/project/papirus-icon-theme/versions) to find out package versions.
-
-| **Distro**    | **Maintainer**       | **Package**                              |
-| :------------ | :------------------- | :--------------------------------------- |
-| Alpine Linux  | David Demelier       | `sudo apk add papirus-icon-theme` <sup>[[link](https://pkgs.alpinelinux.org/package/edge/community/x86_64/papirus-icon-theme)]</sup> |
-| ALT Linux     | Andrey Cherepanov    | `apt-get install papirus-icon-theme` <sup>[[link](https://packages.altlinux.org/en/Sisyphus/srpms/papirus-icon-theme)]</sup> |
-| Arch Linux    | Felix Yan            | `sudo pacman -S papirus-icon-theme` <sup>community</sup> |
-| Arch Linux    | Mark Wagie           | [papirus-icon-theme-git](https://aur.archlinux.org/packages/papirus-icon-theme-git/) <sup>AUR</sup> |
-| Debian 9+     | Yangfl               | `sudo apt install papirus-icon-theme` |
-| Debian        | only_vip             | [papirus-icon-theme](https://mpr.hunterwittenborn.com/packages/papirus-icon-theme/) <sup>MPR</sup> |
-| Fedora 27+    | Robert-André Mauchin | `sudo dnf install papirus-icon-theme` |
-| FreeBSD       | Hiroki Tagato        | [papirus-icon-theme](https://www.freshports.org/x11-themes/papirus-icon-theme) <sup>freshports</sup> |
-| Gentoo        | Marco Scardovi       | `sudo emerge -a papirus-icon-theme` |
-| NixOS         | Nixpkgs Contributors | `nix-env -iA nixos.papirus-icon-theme` |
-| OpenBSD       | David Demelier       | `doas pkg_add papirus-icon-theme` |
-| openSUSE      | Matthias Eliasson    | [papirus-icon-theme](https://software.opensuse.org/package/papirus-icon-theme) <sup>official</sup> |
-| ROSA Linux    | Vladimir Penchikov   | `sudo urpmi papirus-icon-theme` |
-| Solus         | Joshua Strobl        | `sudo eopkg it papirus-icon-theme` |
-| Ubuntu 18.04+ | Yangfl               | `sudo apt install papirus-icon-theme` |
-| Void Linux    | Giuseppe Fierro      | `sudo xbps-install -S papirus-icon-theme` |
-
-> [!NOTE]
-> If you are a maintainer and want to be in the list, please create an issue or make a pull request.
 
 ## Hardcoded icons
 
